@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayers Times</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fontawesome-free-6.4.2-web/css/all.min.css">
+
+    <script src="/node_modules/axios/dist/axios.min.js"></script>
+    <script src="/css/sweetAlert/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <div class="the-layout">
+        <form>
+            <h2>Set your county & city</h2>
+
+            <input list="countries" id="input-country" placeholder="Set from here" onchange="setTheCountry()">
+            <datalist id="countries">
+                <!-- <option value="العراق" data-isoCode="IQ"></option>
+                <option value="مصر" data-isoCode="EG"></option> -->
+            </datalist>
+
+            <input list="cities" id="input-city" placeholder="Set from here">
+            <datalist id="cities">
+                <!-- <option value="الموصل" data-isoCode="IQ-NI"></option>
+                <option value="بغداد" data-isoCode="IQ-BG"></option> -->
+            </datalist>
+
+            <input type="button" id="theButton" value="Click" onclick="button()">
+
+            <p>قد يكون هناك فرق لا يتجاز الخمس دقايق عن أقرب مسجد لك، إنتهزه في الوضوء والاستعداد للصلاة</p>
+        </form>
+    </div>
+
+    <img class="main-img" src="/images/mosque1.jpg" alt="The mosque">
+
+    <div class="container">
+        <div class="destination" title="Set your Located" onclick="setAgain()">
+            <i class="fa-solid fa-compass"></i>
+        </div>
+
+        <div class="the-clock">
+            <div class="the-time">
+                <h1 id="hours"></h1> <b id="minutes"></b>:<b id="seconds"></b>
+            </div>
+        </div>
+
+        <div class="sunrise-date">
+            <div class="the-date">
+                <h1 id="day-name"></h1>
+                <b id="yaer-h"></b> <bdi id="month-h"></bdi> <b id="day-h"></b>
+            </div>
+
+            <div class="the-time">
+                <strong>الشروق</strong>
+                <h1 id="sunrise-time"></h1>
+            </div>
+        </div>
+        
+        <div class="prayers-box">
+            <div class="fajr">
+                <strong>الفجر</strong>
+                <h1></h1>
+                <b></b>
+            </div>
+
+            <div class="dhuhr">
+                <strong>الظهر</strong>
+                <h1></h1>
+                <b></b>
+            </div>
+
+            <div class="asr">
+                <strong>العصر</strong>
+                <h1></h1>
+                <b></b>
+                <!-- <hr>
+                <q>{إِنَّ الصَّلاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا}</q> -->
+            </div>
+
+            <div class="maghrib">
+                <strong>المغرب</strong>
+                <h1></h1>
+                <b></b>
+            </div>
+
+            <div class="isha">
+                <strong>العشاء</strong>
+                <h1></h1>
+                <b></b>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="bottom">
+        <div class="my-info">
+            <a href="https://twitter.com/AhmadAlhadidi95" target="_blank" rel="noopener noreferrer" title="Visit my Twitter (X)"><i class="fa-brands fa-x-twitter" style="color: var(--color1);"></i></a>
+            <a href="https://github.com/AhmadAlhadidi95" target="_blank" rel="noopener noreferrer" title="Visit my Github"><i class="fa-brands fa-github" style="color: var(--color1);"></i></a>
+        </div>
+
+        <img src="/images/My-sign.png" alt="My-sign" style="width: 50px;">
+
+        <div class="copy-right" style="color: var(--color1); font-size: 11px;"></div>
+    </div>
+</body>
+<script src="/js/main.js"></script>
+</html>

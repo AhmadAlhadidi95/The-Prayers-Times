@@ -1,0 +1,243 @@
+:root {
+    --color1: #ffef87;
+    --color2: hsla(215, 90%, 33%, 0.3);
+    --color3: #0b2c60;
+    --white: #f7f7f7;
+    --black: #1b1c1e;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Tahoma, Arial;
+}
+h1, h2 {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.the-layout {
+    /* display: none; */
+    background-color: rgba(8, 72, 159, 0.8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 11;
+}
+.the-layout form {
+    background-color: var(--color3);
+    width: 300px;
+    height: 350px;
+    border: 1px solid var(--color1);
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.the-layout form h2 {
+    color: var(--color1);
+    font-size: 20px;
+}
+.the-layout form #input-country,
+.the-layout form #input-city {
+    background-color: var(--black);
+    padding: 5px;
+    color: var(--color1);
+    outline: none;
+}
+.the-layout form #input-country::placeholder,
+.the-layout form #input-city::placeholder {
+    color: hsla(52, 100%, 76%, .50);
+}
+.the-layout form #input-country:hover::placeholder,
+.the-layout form #input-country:focus::placeholder,
+.the-layout form #input-city:hover::placeholder,
+.the-layout form #input-city:focus::placeholder {
+    opacity: 0;
+    transition: .4s;
+}
+.the-layout form input[type="button"] {
+    background-color: var(--black);
+    width: 80px;
+    padding: 8px 5px;
+    color: var(--color3);
+    font-weight: bold;
+    border: none;
+}
+.the-layout form input[type="button"]:active {
+    transform: scale(97%);
+    color: var(--color1);
+    border: 1px solid var(--color1);
+}
+.the-layout p {
+    margin: 0;
+    width: 250px;
+    text-align: center;
+    color: var(--color1);
+    line-height: 1.5;
+    font-size: 12px;
+}
+.main-img {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+.container {
+    position: relative;
+    padding: 15px;
+}
+.destination {
+    width: fit-content;
+    color: var(--color1);
+    font-size: 26px;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+}
+.the-clock {
+    background-color: var(--color2);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    color: var(--color1);
+    border: 1px solid var(--color1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.the-clock .the-time {
+    font-size: 22px;
+}
+@media (max-width: 800px) {
+    .the-clock {
+        width: 120px;
+        height: 120px;
+    }
+    .the-clock .the-time {
+        font-size: 18px;
+    }
+}
+.sunrise-date {
+    background-color: var(--color2);
+    width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+    color: var(--color1);
+    border: 1px solid var(--color1);
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sunrise-date .the-date #month-h {
+    font-weight: bold;
+}
+@media (max-width: 800px) {
+    .sunrise-date {
+        width: 300px;
+        margin: 15px auto;
+    }
+    .sunrise-date .the-date,
+    .sunrise-date .the-time {
+        font-size: 13px;
+    }
+}
+.prayers-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    /* column-gap: 30px; */
+}
+@media (max-width: 800px) {
+    .prayers-box {
+        row-gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.prayers-box .fajr,
+.prayers-box .dhuhr,
+.prayers-box .asr,
+.prayers-box .maghrib,
+.prayers-box .isha {
+    background-color: var(--color2);
+    width: 150px;
+    height: fit-content;
+    padding: 10px;
+    text-align: center;
+    color: var(--color1);
+    border: 1px solid var(--color1);
+    border-radius: 4px;
+    transition: .4s;
+}
+@media (max-width: 800px) {
+    .prayers-box .fajr,
+    .prayers-box .dhuhr,
+    .prayers-box .asr,
+    .prayers-box .maghrib,
+    .prayers-box .isha {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+        font-size: 18px;
+    }
+}
+.prayers-box .fajr.current-pray,
+.prayers-box .dhuhr.current-pray,
+.prayers-box .asr.current-pray,
+.prayers-box .maghrib.current-pray,
+.prayers-box .isha.current-pray {
+    background-color: var(--color3);
+    width: 200px;
+    transition: .4s;
+}
+@media (max-width: 800px) {
+    .prayers-box .fajr.current-pray,
+    .prayers-box .dhuhr.current-pray,
+    .prayers-box .asr.current-pray,
+    .prayers-box .maghrib.current-pray,
+    .prayers-box .isha.current-pray {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .infoBox {
+        font-size: 15px;
+    }
+}
+.prayers-box .fajr.current-pray hr,
+.prayers-box .fajr.current-pray q,
+.prayers-box .dhuhr.current-pray hr,
+.prayers-box .dhuhr.current-pray q,
+.prayers-box .asr.current-pray hr,
+.prayers-box .asr.current-pray q,
+.prayers-box .maghrib.current-pray hr,
+.prayers-box .maghrib.current-pray q,
+.prayers-box .isha.current-pray hr,
+.prayers-box .isha.current-pray q {
+    width: 100%;
+    border-color: var(--color1);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.bottom {
+    position: relative;
+    bottom: -100px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+.bottom .my-info {
+    width: fit-content;
+    font-size: 18px;
+}
