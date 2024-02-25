@@ -238,10 +238,10 @@ function changeImages() {
         `/images/mosque4.jpg`,
     ]
 
-    let getRandomImage = Math.floor(Math.random() * images.length)
-
-    document.querySelector(".main-img").src = images[getRandomImage]
-
-    setInterval(changeImages, 15000)
+    
+    setInterval(() => {
+        let getRandomImage = Math.floor(Math.random() * images.length)
+        document.querySelector(".main-img").src = images[getRandomImage]
+    }, 15000)
 
 }
