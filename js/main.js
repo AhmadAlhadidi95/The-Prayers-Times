@@ -123,7 +123,7 @@ function mainRoom() {
     let theCountry = localStorage.getItem("countryIso") || `SA`
     let theCity = localStorage.getItem("cityIso") || `SA-02`
 
-    axios.get(`http://api.aladhan.com/v1/timingsByCity?city=${theCity}&country=${theCountry}`)
+    axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${theCity}&country=${theCountry}`)
     .then((response) => {
         let allData = response.data.data
         let theHijriDate = allData.date.hijri
